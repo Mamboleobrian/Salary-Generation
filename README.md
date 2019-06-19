@@ -1,2 +1,2 @@
-# Salary-Generation
-# Salary-Generation
+# Salary-Generation using Java and Arduino
+
