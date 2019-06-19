@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.emojione.EmojiOneView?>
+<?import de.jensd.fx.glyphs.octicons.OctIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchor_generate" prefHeight="400.0" style="-fx-background-color: #ffffcc;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.generate_salary">
+   <children>
+      <Label alignment="CENTER" layoutX="11.0" layoutY="14.0" prefHeight="47.0" prefWidth="980.0" style="-fx-background-color: #5d1f00;" text="GENERATE SALARY" textFill="#ffffcc" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="entered_id" alignment="CENTER" layoutX="1.0" layoutY="66.0" prefHeight="24.0" prefWidth="1000.0" text="Label" textFill="#5d1f00" AnchorPane.leftAnchor="1.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableview_generate" layoutX="22.0" layoutY="104.0" prefHeight="255.0" prefWidth="610.0">
+        <columns>
+          <TableColumn fx:id="_date" prefWidth="118.0" text="DATE" />
+            <TableColumn fx:id="_card_id" prefWidth="108.0" text="CARD ID" />
+            <TableColumn fx:id="_staff" prefWidth="126.0" text="STAFF ID" />
+          <TableColumn fx:id="_arrival_time" prefWidth="124.0" text="ARRIVAL TIME" />
+            <TableColumn fx:id="_departure_time" prefWidth="133.0" text="DEPARTURE TIME" />
+        </columns>
+      </TableView>
+      <TextArea fx:id="salary_display" layoutX="699.0" layoutY="108.0" prefHeight="182.0" prefWidth="239.0" />
+      <Button  layoutX="699.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#generate" stylesheets="@../styles/ueps.css" text="GENERATE" />
+      <EmojiOneView fill="#5d1f00" glyphName="PRINTER" layoutX="911.0" layoutY="333.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Label layoutX="899.0" layoutY="354.0" text="PRINT" textFill="#5d1f00">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Separator layoutX="640.0" layoutY="104.0" orientation="VERTICAL" prefHeight="263.0" prefWidth="12.0" />
+      <OctIconView fill="#ffffcc" glyphName="HOME" layoutX="34.0" layoutY="38.0" onMouseClicked="#back_home" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Label alignment="CENTER" layoutX="26.0" layoutY="47.0" prefHeight="7.0" prefWidth="28.0" text="HOME" textFill="#ffffcc">
+         <font>
+            <Font size="8.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

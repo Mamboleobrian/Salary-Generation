@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.icons525.Icons525View?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorMain" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #ffffcc;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+
+
+   <children>
+      <BorderPane fx:id="borderpane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="650.0" style="-fx-background-color: #fffcc;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="273.0" style="-fx-background-color: #19355e;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" layoutX="1.0" layoutY="50.0" prefHeight="47.0" text="UNIVERSITY OF ELDORET SALARY GENERATION SYSTEM" textFill="#ffffcc" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                     <font>
+                        <Font name="System Bold" size="32.0" />
+                     </font></Label>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <ImageView blendMode="HARD_LIGHT" cache="true" fitHeight="133.0" fitWidth="500.0" opacity="0.08" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/eldorate.png" />
+                           </image>
+                           <effect>
+                              <InnerShadow choke="0.01" height="255.0" radius="127.0" width="255.0" />
+                           </effect>
+                        </ImageView>
+                        <ImageView blendMode="HARD_LIGHT" fitHeight="133.0" fitWidth="750.0" opacity="0.08" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/eldorate.png" />
+                           </image>
+                           <effect>
+                              <InnerShadow choke="0.01" height="255.0" radius="127.0" width="255.0" />
+                           </effect>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="148.0" prefHeight="86.0" spacing="50.0" style="-fx-background-color: #ffffcc;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                     <children>
+                        <Button mnemonicParsing="false" onMouseClicked="#new_card" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="NEW" />
+                        <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#logs" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="LOGS" />
+                        <Button mnemonicParsing="false" onAction="#details" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="DETAILS" />
+                        <Button mnemonicParsing="false" onAction="#pay" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="PAY SLIP" />
+                        <VBox prefHeight="86.0" prefWidth="97.0">
+                           <children>
+                              <AnchorPane prefHeight="66.0" prefWidth="100.0">
+                                 <children>
+                                    <FontAwesomeIconView fill="#19355e" glyphName="USER_CIRCLE_ALT" onMouseClicked="#profile" scaleX="4.0" scaleY="4.0" strokeType="OUTSIDE" strokeWidth="0.0" translateX="43.0" translateY="40.0" />
+                                 </children></AnchorPane>
+                              <Label fx:id="prof" alignment="CENTER" prefHeight="24.0" prefWidth="120.0" text="PROFILE" textFill="#5d1f00">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Button mnemonicParsing="false" onAction="#button_rates" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="RATES" />
+                        <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="PAYED" />
+                        <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="DELETE" />
+                        <Button mnemonicParsing="false" onAction="#logout" stylesheets="@../styles/ueps.css" text="LOG OUT" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="87.0" layoutY="238.0" prefHeight="32.0" spacing="4.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                     <children>
+                        <TextField alignment="CENTER" prefHeight="30.0" prefWidth="168.0" promptText="Search Staff ID">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <Icons525View fill="#ffffcc" glyphName="SEARCH" scaleX="1.7" scaleY="1.7" strokeType="OUTSIDE" strokeWidth="0.0" />
+                     </children>
+                  </HBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </AnchorPane>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
