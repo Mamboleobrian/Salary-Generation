@@ -130,6 +130,18 @@ public class Controller implements Initializable {
         stage.close();
     }
 
+    public void add_jurisdiction(MouseEvent mouseEvent) {
+    }
+
+    public void delete_employee(MouseEvent mouseEvent) throws IOException {
+        FXMLLoader loader= new  FXMLLoader(getClass().getResource("../fxml/delete_employee.fxml"));
+        Parent root= loader.load();
+        Stage stage_app = new Stage();
+        stage_app.setScene(new Scene(root));
+        stage_app.show();
+
+    }
+
 
     // public void retrive_id(String users){
       //  staffprofile.setText(users);

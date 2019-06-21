@@ -67,8 +67,8 @@
                            </children>
                         </VBox>
                         <Button mnemonicParsing="false" onAction="#button_rates" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="RATES" />
-                        <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="PAYED" />
-                        <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="DELETE" />
+                        <Button mnemonicParsing="false" onMouseClicked="#add_jurisdiction" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="ADD" />
+                        <Button mnemonicParsing="false" onMouseClicked="#delete_employee" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="DELETE" />
                         <Button mnemonicParsing="false" onAction="#logout" stylesheets="@../styles/ueps.css" text="LOG OUT" />
                      </children>
                   </HBox>
