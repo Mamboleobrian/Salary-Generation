@@ -9,6 +9,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -33,9 +35,9 @@
             <TableColumn fx:id="_departure_time" prefWidth="121.0" text="DEPARTURE TIME" />
         </columns>
       </TableView>
-      <TextArea fx:id="salary_display" layoutX="647.0" layoutY="108.0" prefHeight="182.0" prefWidth="317.0" />
+      <TextArea fx:id="salary_display" layoutX="647.0" layoutY="101.0" prefHeight="189.0" prefWidth="317.0" />
       <Button layoutX="670.0" layoutY="422.0" mnemonicParsing="false" onMouseClicked="#generate" stylesheets="@../styles/ueps.css" text="GENERATE" />
-      <EmojiOneView fill="#5d1f00" glyphName="PRINTER" layoutX="911.0" layoutY="333.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <EmojiOneView fill="#5d1f00" glyphName="PRINTER" layoutX="911.0" layoutY="333.0" onMouseClicked="#payslip_print" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0" />
       <Label layoutX="899.0" layoutY="354.0" text="PRINT" textFill="#5d1f00">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -60,5 +62,9 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
+      <ImageView fx:id="logo_pay" fitHeight="58.0" fitWidth="157.0" layoutX="657.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/eldorate.png" />
+         </image></ImageView>
    </children>
 </AnchorPane>

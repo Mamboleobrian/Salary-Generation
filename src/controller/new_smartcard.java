@@ -90,6 +90,8 @@ public class new_smartcard implements Initializable {
         for (String Jobs : four_jobs ){
             selections.addAll(Jobs);
 
+
+
         }
         Collections.sort(selections);
         jurisdiction.getItems().addAll(selections);

@@ -8,16 +8,20 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -37,6 +41,7 @@ public class generate_salary  implements Initializable {
     public DatePicker date_to;
     public Label _from;
     public Label _to;
+    public ImageView logo_pay;
     String id_holder;
 
     ObservableList<TableModelgen> observableList = FXCollections.observableArrayList();
@@ -108,6 +113,7 @@ public class generate_salary  implements Initializable {
 
         validate_date();
 
+
         double mamboleo = 0;
         double cash_rate = 0;
         double cash_ovr = 0;
@@ -130,14 +136,17 @@ public class generate_salary  implements Initializable {
 
                 Statement statement = null;
                 Statement statement2 = null;
+                Statement statement3 = null;
                 try {
                     statement = connection.createStatement();
                     statement2 = connection.createStatement();
+                    statement3 = connection.createStatement();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
                 String sql = "select sum(diff) from logs where staff_id = '"+entered_id.getText()+"' and date >= '"+date_from.getValue()+"' and date <= '"+date_to.getValue()+"'";
                 String sql2 = "select payment_rate.rate, payment_rate.ovr from payment_rate inner join details on payment_rate.jurisdiction = details.jurisdiction where details.ID = '"+entered_id.getText()+"'";
+
                 ResultSet resultSet = null;
                 ResultSet resultSet2 = null;
                 try {
@@ -163,14 +172,45 @@ public class generate_salary  implements Initializable {
                     ans += (mamboleo - 40) * cash_ovr;
                 }
 
-                salary_display.setText(String.valueOf(ans));
+                String query = "delete  from logs where staff_id= ?";
+                PreparedStatement prepareDelete = connection.prepareStatement(query);
+                prepareDelete.setString(1, entered_id.getText());
+                prepareDelete.executeUpdate();
 
+                //logo();
+                //java.util.Date date = new java.util.Date();
+
+                LocalDate dateToday = LocalDate.now();
+                LocalTime timeNow = LocalTime.now();
+
+                salary_display.appendText("\n           UNIVERSITY OF ELDORET PAYSLIP  "+"\n\n\n\n Staff_id        "
+                        +entered_id.getText()+"\n\n Amount       "+String.valueOf(ans)+"\n\nDate payed         "+dateToday+"\n\nTime payed          "+timeNow+
+                        "\n\nPayment for date   "+date_from.getValue()+" to date "+date_to.getValue()+"");
+
+                String sql4="INSERT INTO payed(staff_id, amount, date_from, date_to, time_payed, date_payed) VALUES('"+entered_id.getText()+"','"+String.valueOf(ans)+"','"+date_from.getValue()+"','"+date_to.getValue()+"','"+timeNow+"','"+dateToday+"')";
+                Statement statement4 = null;
+                statement4 = connection.createStatement();
+
+                statement4.executeUpdate(sql4);
+
+
+
+                //salary_display.setText(String.valueOf(sql3));
+               // salary_display.setText(String.valueOf(ans));
             }
         }
 
 
 
     }
+
+    private void logo(Stage stage)throws FileNotFoundException {
+        Image image = new Image(new FileInputStream("/images/eldorate.jpg"));
+        logo_pay = new ImageView(image);
+        stage.show();
+    }
+
+
 
     public void validate_date(){
 
@@ -200,5 +240,11 @@ public class generate_salary  implements Initializable {
 
     public void to_date(ActionEvent actionEvent) {
 
+    }
+
+    public void payslip_print(MouseEvent mouseEvent) {
+
+        printer pay_printer = new printer();
+        pay_printer.Printing(salary_display);
     }
 }

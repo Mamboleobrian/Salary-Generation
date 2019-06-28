@@ -14,7 +14,7 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <HBox alignment="CENTER" layoutX="416.0" layoutY="167.0" prefHeight="47.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+      <HBox alignment="CENTER" layoutX="20.0" layoutY="147.0" prefHeight="47.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
          <children>
             <TextField fx:id="enter_staff" alignment="CENTER" promptText="Enter Staff_ID">
                <font>
@@ -22,9 +22,9 @@
                </font>
             </TextField>
          </children></HBox>
-      <HBox alignment="CENTER" layoutX="389.0" layoutY="220.0" prefHeight="42.0" prefWidth="960.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+      <HBox alignment="CENTER" layoutX="389.0" layoutY="208.0" prefHeight="67.0" prefWidth="960.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
          <children>
-            <Label fx:id="staff_results" alignment="CENTER" prefHeight="20.0" prefWidth="286.0" textFill="RED">
+            <Label fx:id="staff_results" alignment="CENTER" prefHeight="62.0" prefWidth="286.0" textFill="RED">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

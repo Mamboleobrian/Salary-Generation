@@ -44,9 +44,12 @@ public class enter_staffid implements Initializable {
         Connection connection= connectionClass.getConnection();
 
         id = enter_staff.getText();
-        if (id.length() < 5 && id.isEmpty())
+        if  ( id.isEmpty())
         {
             staff_results.setText("INVALID INPUT!!");
+        }else if(id.length() < 5){
+            staff_results.setText("INVALID INPUT!!");
+
 
         }
         else {
@@ -82,7 +85,7 @@ public class enter_staffid implements Initializable {
 
                 }
                 else {
-                    staff_results.setText("INVALID INPUT!!");
+                    staff_results.setText("         INVALID INPUT!!\n OR EMPLOYEE ALREADY PAYED!!");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();

@@ -52,7 +52,7 @@
                         <Button mnemonicParsing="false" onMouseClicked="#new_card" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="NEW" />
                         <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#logs" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="LOGS" />
                         <Button mnemonicParsing="false" onAction="#details" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="DETAILS" />
-                        <Button mnemonicParsing="false" onAction="#pay" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="PAY SLIP" />
+                        <Button mnemonicParsing="false" onAction="#button_rates" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="RATES" />
                         <VBox prefHeight="86.0" prefWidth="97.0">
                            <children>
                               <AnchorPane prefHeight="66.0" prefWidth="100.0">
@@ -66,20 +66,20 @@
                               </Label>
                            </children>
                         </VBox>
-                        <Button mnemonicParsing="false" onAction="#button_rates" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="RATES" />
-                        <Button mnemonicParsing="false" onMouseClicked="#add_jurisdiction" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="ADD" />
+                        <Button mnemonicParsing="false" onAction="#pay" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="PAY SLIP" />
+                        <Button mnemonicParsing="false" onMouseClicked="#add_jurisdiction" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="PAYED" />
                         <Button mnemonicParsing="false" onMouseClicked="#delete_employee" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="DELETE" />
                         <Button mnemonicParsing="false" onAction="#logout" stylesheets="@../styles/ueps.css" text="LOG OUT" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" layoutX="87.0" layoutY="238.0" prefHeight="32.0" spacing="4.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
                      <children>
-                        <TextField alignment="CENTER" prefHeight="30.0" prefWidth="168.0" promptText="Search Staff ID">
+                        <TextField fx:id="search_id" alignment="CENTER" prefHeight="30.0" prefWidth="168.0" promptText="Search Staff ID">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </TextField>
-                        <Icons525View fill="#ffffcc" glyphName="SEARCH" scaleX="1.7" scaleY="1.7" strokeType="OUTSIDE" strokeWidth="0.0" />
+                        <Icons525View fill="#ffffcc" glyphName="SEARCH" onMouseClicked="#click_search" scaleX="1.7" scaleY="1.7" strokeType="OUTSIDE" strokeWidth="0.0" />
                      </children>
                   </HBox>
                </children>

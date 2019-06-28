@@ -37,7 +37,7 @@ public class logs implements Initializable {
         Connection connection = connectivityClass.getConnection();
 
         try {
-            ResultSet resultSet = connection.createStatement().executeQuery("select date, card_id, staff_id, time_in, time_out from logs");
+            ResultSet resultSet = connection.createStatement().executeQuery("select date, card_id, staff_id, time_in, time_out from logs order by date desc");
 
             while (resultSet.next()){
                 observableList.add(new TableModel(resultSet.getString("date"),resultSet.getString("card_id"),resultSet.getString("staff_id"),resultSet.getString("time_in"),resultSet.getString("time_out")));

@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -27,7 +28,7 @@ public class Controller implements Initializable {
     public BorderPane borderpane;
     public Label staffprofile;
     public Label prof;
-
+    public TextField search_id;
 
 
     public void new_card(MouseEvent mouseEvent) throws IOException {
@@ -139,6 +140,11 @@ public class Controller implements Initializable {
         Stage stage_app = new Stage();
         stage_app.setScene(new Scene(root));
         stage_app.show();
+
+    }
+
+    public void click_search(MouseEvent mouseEvent) {
+
 
     }
 
