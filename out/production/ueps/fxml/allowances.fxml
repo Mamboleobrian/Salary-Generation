@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchor_allowances" prefHeight="400.0" prefWidth="1000.0" style="-fx-background-color: #ffffcc;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.allowances">
+   <children>
+      <Label alignment="CENTER" layoutX="20.0" layoutY="14.0" prefHeight="47.0" style="-fx-background-color: #5d1f00;" text="ALLOWANCES" textFill="#ffffcc" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" layoutX="11.0" layoutY="80.0" prefHeight="312.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="65.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="540.0" spacing="20.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="225.0" text="CURRENT ALLOWANCES" textFill="#19355e">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tableview_allowance" prefHeight="200.0" prefWidth="437.0">
+                     <columns>
+                        <TableColumn fx:id="jurisdiction_a" prefWidth="223.0" text="JURISDICTION" />
+                        <TableColumn fx:id="house" prefWidth="152.0" text="HOUSE ALLOWANCE" />
+                        <TableColumn fx:id="transport" prefWidth="165.0" text="TRANSPORT ALLOWANCE" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+            </VBox>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <VBox alignment="CENTER" prefHeight="317.0" prefWidth="521.0" spacing="40.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="450.0" text="CHANGE  ALLOWANCES" textFill="#19355e">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="TOP_CENTER" prefHeight="41.0" prefWidth="452.0" spacing="10.0">
+                     <children>
+                        <JFXComboBox fx:id="select_jury" editable="true" focusColor="#19355e" labelFloat="true" prefWidth="150.0" promptText="Select Jurisdiction" unFocusColor="#19355e" />
+                        <JFXComboBox fx:id="select_allowance" editable="true" focusColor="#19355e" labelFloat="true" layoutX="87.0" layoutY="10.0" prefWidth="150.0" promptText="Select Allowance" unFocusColor="#19355e" />
+                        <JFXTextField fx:id="new_amount" alignment="CENTER" focusColor="#19355e" labelFloat="true" promptText="New Amount in KSH" unFocusColor="#19355e">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                  </HBox>
+                  <Button mnemonicParsing="false" onMouseClicked="#change" stylesheets="@../styles/ueps.css" text="CHANGE" />
+                  <Label onMouseClicked="#help_allowance" prefHeight="26.0" prefWidth="43.0" text="Help" textFill="#0026ff" underline="true">
+                     <font>
+                        <Font name="System Bold Italic" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

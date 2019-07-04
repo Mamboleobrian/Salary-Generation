@@ -1,6 +1,9 @@
 package controller;
 
 import animatefx.animation.SlideInRight;
+import com.jfoenix.controls.JFXCheckBox;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import database_ueps.ConnectivityClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -30,11 +33,43 @@ public class profile implements Initializable {
     public AnchorPane anchor_profile;
     public Label display_prof;
     public Label deleted;
-    public TextField new_password;
-    public TextField old_password;
+
+    public JFXPasswordField confirm_new_password;
+    public JFXPasswordField new_password;
+    public JFXPasswordField old_password;
+    public JFXTextField show_old;
+    public JFXTextField show_new;
+    public JFXCheckBox check_old;
+    public JFXCheckBox check_new;
 
     public void initialize(URL location, ResourceBundle resources) {
+
         new SlideInRight(anchor_profile).play();
+
+        show_old.setManaged(false);
+        show_old.setVisible(false);
+
+        show_old.managedProperty().bind(check_old.selectedProperty());
+        show_old.visibleProperty().bind(check_old.selectedProperty());
+
+        old_password.managedProperty().bind(check_old.selectedProperty().not());
+        old_password.visibleProperty().bind(check_old.selectedProperty().not());
+
+        show_old.textProperty().bindBidirectional(old_password.textProperty());
+
+
+        show_new.setManaged(false);
+        show_new.setVisible(false);
+
+        show_new.managedProperty().bind(check_new.selectedProperty());
+        show_new.visibleProperty().bind(check_new.selectedProperty());
+
+        new_password.managedProperty().bind(check_new.selectedProperty().not());
+        new_password.visibleProperty().bind(check_new.selectedProperty().not());
+
+        show_new.textProperty().bindBidirectional(new_password.textProperty());
+
+
     }
 
     public void displayId(String user) {
@@ -92,18 +127,26 @@ public class profile implements Initializable {
         String query = "select password from registration where staff_id=?";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
+           // PreparedStatement preparedStatement1 = connection.prepareStatement(query);
             preparedStatement.setString(1,display_prof.getText());
+           // preparedStatement1.setString(2,display_prof.getText());
             ResultSet resultSet = preparedStatement.executeQuery();
+           // ResultSet resultSet1 = preparedStatement1.executeQuery();
             while (resultSet.next()) {
                 String pass = resultSet.getString("password");
                 if (pass.equals(old_password.getText())) {
 
                     String sql = "update registration set password=? where staff_id=?";
+                   // String sql2 = "update registration set confirm_password where staff_id=?";
                     try {
                         PreparedStatement statement = connection.prepareStatement(sql);
+                       // PreparedStatement statement1 = connection.prepareStatement(sql2);
                         statement.setString(1, new_password.getText());
+                        //statement1.setString(2, confirm_new_password.getText());
                         statement.setString(2, display_prof.getText());
+
                         statement.executeUpdate();
+
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }

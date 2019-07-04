@@ -16,7 +16,7 @@ public class printer {
         Printer printer = Printer.getDefaultPrinter(); //gets the default printer.
 
         PageLayout pageLayout = printer.createPageLayout(
-                Paper.A6, PageOrientation.REVERSE_LANDSCAPE, 20,20,15,12);  //setting pagelayout
+                Paper.A4, PageOrientation.REVERSE_LANDSCAPE, 20,20,15,12);  //setting pagelayout
 
         PrinterJob job = PrinterJob.createPrinterJob(printer); //create a job for a specified printer
 

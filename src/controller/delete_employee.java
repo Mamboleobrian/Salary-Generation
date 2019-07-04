@@ -1,5 +1,6 @@
 package controller;
 
+import com.jfoenix.controls.JFXTextField;
 import database_ueps.ConnectivityClass;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
@@ -15,11 +16,12 @@ import java.sql.*;
 import java.util.Optional;
 
 public class delete_employee {
-    public TextField staff_delete;
+    public JFXTextField staff_delete;
     public AnchorPane anchor_delete_employee;
     public Label deleted_account;
     public Label delete_info;
     public static String id_del;
+
 
     public void delete_emp(ActionEvent actionEvent) {
 

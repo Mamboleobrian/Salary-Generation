@@ -1,49 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.octicons.OctIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="anchor_profile" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffcc;" stylesheets="@../styles/ueps.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.profile">
    <children>
-      <FontAwesomeIconView fill="#19355e" glyphName="USER" layoutX="294.0" layoutY="152.0" scaleX="10.0" scaleY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <Label fx:id="display_prof" alignment="CENTER" layoutX="212.0" layoutY="162.0" prefHeight="26.0" prefWidth="172.0" text="Label" textFill="#ffffcc">
+      <FontAwesomeIconView fill="#19355e" glyphName="USER" layoutX="292.0" layoutY="132.0" scaleX="10.0" scaleY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Label fx:id="display_prof" alignment="CENTER" layoutX="213.0" layoutY="148.0" prefHeight="26.0" prefWidth="172.0" text="Label" textFill="#ffffcc">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Label>
-      <Label fx:id="help" layoutX="276.0" layoutY="333.0" onMouseClicked="#help_popup" prefHeight="26.0" prefWidth="45.0" text="Help" textFill="#0026ff" underline="true">
+      <Label fx:id="help" layoutX="285.0" layoutY="343.0" onMouseClicked="#help_popup" prefHeight="26.0" prefWidth="45.0" text="Help" textFill="#0026ff" underline="true">
          <font>
             <Font name="System Bold Italic" size="17.0" />
          </font>
       </Label>
-      <Button layoutX="373.0" layoutY="335.0" mnemonicParsing="false" onAction="#change_password" text="CHANGE" />
-      <Label fx:id="deleted" layoutX="82.0" layoutY="338.0" onMouseClicked="#account_delete" prefHeight="36.0" prefWidth="172.0" text="Delete this account!!" textFill="RED" underline="true">
+      <Button layoutX="385.0" layoutY="335.0" mnemonicParsing="false" onAction="#change_password" text="CHANGE" />
+      <Label fx:id="deleted" layoutX="81.0" layoutY="338.0" onMouseClicked="#account_delete" prefHeight="36.0" prefWidth="172.0" text="Delete this account!!" textFill="RED" underline="true">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <OctIconView fill="RED" glyphName="X" layoutX="227.0" layoutY="360.0" scaleX="1.5" scaleY="1.5" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <OctIconView fill="RED" glyphName="X" layoutX="226.0" layoutY="360.0" scaleX="1.5" scaleY="1.5" strokeType="OUTSIDE" strokeWidth="0.0" />
       <Label alignment="CENTER" layoutX="10.0" layoutY="21.0" prefHeight="47.0" prefWidth="580.0" style="-fx-background-color: #5D1F00;" text="PROFILE" textFill="#ffffcc">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <PasswordField fx:id="old_password" alignment="CENTER" layoutX="214.0" layoutY="221.0" promptText="Old Password">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font></PasswordField>
-      <PasswordField fx:id="new_password" alignment="CENTER" layoutX="214.0" layoutY="264.0" promptText="New Pasword">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font></PasswordField>
       <OctIconView fill="#ffffcc" glyphName="HOME" layoutX="26.0" layoutY="45.0" onMouseClicked="#return_home" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0" />
       <Label alignment="CENTER" layoutX="18.0" layoutY="54.0" prefHeight="7.0" prefWidth="28.0" text="HOME" textFill="#ffffcc">
          <font>
             <Font size="8.0" />
          </font>
       </Label>
+      <JFXPasswordField fx:id="new_password" alignment="CENTER" focusColor="#19355e" labelFloat="true" layoutX="214.0" layoutY="260.0" prefHeight="25.0" prefWidth="172.0" promptText="New Password" unFocusColor="#19355e">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXPasswordField fx:id="old_password" alignment="CENTER" focusColor="#19355e" labelFloat="true" layoutX="214.0" layoutY="200.0" prefHeight="25.0" prefWidth="172.0" promptText="Old Password" unFocusColor="#19355e">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXTextField fx:id="show_old" alignment="CENTER" focusColor="#19355e" labelFloat="true" layoutX="212.0" layoutY="200.0" prefHeight="25.0" prefWidth="172.0" unFocusColor="#19355e" />
+      <JFXTextField fx:id="show_new" alignment="CENTER" focusColor="#19355e" labelFloat="true" layoutX="214.0" layoutY="260.0" prefHeight="25.0" prefWidth="172.0" unFocusColor="#19355e" />
+      <JFXCheckBox fx:id="check_old" checkedColor="#19355e" layoutX="385.0" layoutY="204.0" mnemonicParsing="false" text="Show" textFill="#19355e" unCheckedColor="#19355e" underline="true" />
+      <JFXCheckBox fx:id="check_new" checkedColor="#19355e" layoutX="385.0" layoutY="264.0" mnemonicParsing="false" text="Show" textFill="#19355e" unCheckedColor="#19355e" underline="true" />
    </children>
 </AnchorPane>

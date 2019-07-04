@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXTextArea?>
 <?import de.jensd.fx.glyphs.emojione.EmojiOneView?>
 <?import de.jensd.fx.glyphs.octicons.OctIconView?>
 <?import javafx.scene.control.Button?>
@@ -8,13 +9,10 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchor_generate" prefHeight="478.0" prefWidth="1001.0" style="-fx-background-color: #ffffcc;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.generate_salary">
+<AnchorPane fx:id="anchor_generate" prefHeight="550.0" prefWidth="1050.0" style="-fx-background-color: #ffffcc;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.generate_salary">
    <children>
       <Label alignment="CENTER" layoutX="11.0" layoutY="14.0" prefHeight="47.0" prefWidth="980.0" style="-fx-background-color: #5d1f00;" text="GENERATE SALARY" textFill="#ffffcc" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
          <font>
@@ -23,48 +21,59 @@
       </Label>
       <Label fx:id="entered_id" alignment="CENTER" layoutX="1.0" layoutY="66.0" prefHeight="24.0" prefWidth="1000.0" text="Label" textFill="#5d1f00" AnchorPane.leftAnchor="1.0">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <TableView fx:id="tableview_generate" layoutX="22.0" layoutY="104.0" prefHeight="355.0" prefWidth="577.0">
+      <TableView fx:id="tableview_generate" layoutX="22.0" layoutY="104.0" prefHeight="370.0" prefWidth="577.0">
         <columns>
-          <TableColumn fx:id="_date" prefWidth="118.0" text="DATE" />
-            <TableColumn fx:id="_card_id" prefWidth="108.0" text="CARD ID" />
-            <TableColumn fx:id="_staff" prefWidth="126.0" text="STAFF ID" />
-          <TableColumn fx:id="_arrival_time" prefWidth="103.0" text="ARRIVAL TIME" />
-            <TableColumn fx:id="_departure_time" prefWidth="121.0" text="DEPARTURE TIME" />
+          <TableColumn fx:id="_date" prefWidth="87.99999237060547" text="DATE" />
+            <TableColumn fx:id="_card_id" prefWidth="85.0" text="CARD ID" />
+          <TableColumn fx:id="_arrival_time" prefWidth="121.0" text="ARRIVAL TIME" />
+            <TableColumn fx:id="_departure_time" prefWidth="149.0" text="DEPARTURE TIME" />
+            <TableColumn fx:id="time_worked" prefWidth="133.0" text="TIME WORKED" />
         </columns>
       </TableView>
-      <TextArea fx:id="salary_display" layoutX="647.0" layoutY="101.0" prefHeight="189.0" prefWidth="317.0" />
-      <Button layoutX="670.0" layoutY="422.0" mnemonicParsing="false" onMouseClicked="#generate" stylesheets="@../styles/ueps.css" text="GENERATE" />
-      <EmojiOneView fill="#5d1f00" glyphName="PRINTER" layoutX="911.0" layoutY="333.0" onMouseClicked="#payslip_print" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <Label layoutX="899.0" layoutY="354.0" text="PRINT" textFill="#5d1f00">
+      <Button layoutX="790.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#generate" stylesheets="@../styles/ueps.css" text="GENERATE" />
+      <EmojiOneView fill="#5d1f00" glyphName="PRINTER" layoutX="828.0" layoutY="510.0" onMouseClicked="#payslip_print" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Label layoutX="816.0" layoutY="531.0" text="PRINT" textFill="#5d1f00">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Separator layoutX="606.0" layoutY="97.0" orientation="VERTICAL" prefHeight="355.0" prefWidth="12.0" />
+      <Separator layoutX="606.0" layoutY="97.0" orientation="VERTICAL" prefHeight="442.0" prefWidth="12.0" />
       <OctIconView fill="#ffffcc" glyphName="HOME" layoutX="34.0" layoutY="38.0" onMouseClicked="#back_home" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0" />
       <Label alignment="CENTER" layoutX="26.0" layoutY="47.0" prefHeight="7.0" prefWidth="28.0" text="HOME" textFill="#ffffcc">
          <font>
             <Font size="8.0" />
          </font>
       </Label>
-      <DatePicker fx:id="date_from" layoutX="690.0" layoutY="316.0" onAction="#from_date" />
-      <DatePicker fx:id="date_to" layoutX="690.0" layoutY="363.0" onAction="#to_date" />
-      <Label fx:id="_from" layoutX="618.0" layoutY="320.0" prefHeight="17.0" prefWidth="48.0" text="FROM">
+      <Label fx:id="_from" layoutX="618.0" layoutY="104.0" prefHeight="17.0" prefWidth="48.0" text="FROM">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="_to" layoutX="618.0" layoutY="367.0" prefHeight="17.0" prefWidth="48.0" text="TO">
+      <Label fx:id="_to" layoutX="843.0" layoutY="104.0" prefHeight="17.0" prefWidth="48.0" text="TO">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <ImageView fx:id="logo_pay" fitHeight="58.0" fitWidth="157.0" layoutX="657.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/eldorate.png" />
-         </image></ImageView>
+      <EmojiOneView fill="#5d1f00" glyphName="PRINTER" layoutX="305.0" layoutY="509.0" onMouseClicked="#specific_logs_print" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Label layoutX="241.0" layoutY="523.0" prefHeight="17.0" prefWidth="104.0" text="PRINT LOGS FOR" textFill="#5d1f00">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="entered_id_Print" layoutX="344.0" layoutY="519.0" prefHeight="24.0" prefWidth="64.0" text="Label" textFill="#5d1f00">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTextArea fx:id="salary_display" focusColor="#19355e" labelFloat="true" layoutX="667.0" layoutY="203.0" prefHeight="264.0" prefWidth="344.0" promptText="                        PAYSLIP DISPLAYS HERE" unFocusColor="#19355e">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextArea>
+      <DatePicker fx:id="date_from" layoutX="675.0" layoutY="101.0" prefHeight="25.0" prefWidth="158.0" promptText="Select Date From" />
+      <DatePicker fx:id="date_to" layoutX="867.0" layoutY="101.0" prefHeight="25.0" prefWidth="158.0" promptText="Select Date To" />
    </children>
 </AnchorPane>

@@ -4,9 +4,9 @@ public class TableModelgen {
 
     String dates;
     String card;
-    String staffs;
     String arrival;
     String departure;
+    String time;
 
     public String getDates() {
         return dates;
@@ -22,14 +22,6 @@ public class TableModelgen {
 
     public void setCard(String card) {
         this.card = card;
-    }
-
-    public String getStaffs() {
-        return staffs;
-    }
-
-    public void setStaffs(String staffs) {
-        this.staffs = staffs;
     }
 
     public String getArrival() {
@@ -48,11 +40,19 @@ public class TableModelgen {
         this.departure = departure;
     }
 
-    public TableModelgen(String dates, String card, String staffs, String arrival, String departure) {
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public TableModelgen(String dates, String card, String arrival, String departure, String time) {
         this.dates = dates;
         this.card = card;
-        this.staffs = staffs;
         this.arrival = arrival;
         this.departure = departure;
+        this.time = time;
     }
 }

@@ -1,10 +1,14 @@
 package controller;
 
+import com.jfoenix.controls.JFXCheckBox;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import database_ueps.ConnectivityClass;
 import database_ueps.ConnectivityClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,24 +22,71 @@ import controller.validator;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.net.URL;
 import java.sql.*;
+import java.util.ResourceBundle;
 
-public class staffreg {
+public class staffreg implements Initializable {
     public ActionEvent event;
-    public TextField staff_id;
-    public TextField name_field;
-    public TextField password;
-    public TextField confirm_password;
-    public PasswordField admin_pass;
+    public JFXTextField name_field;
+    public JFXTextField staff_id;
+    public JFXPasswordField password;
+    public JFXPasswordField admin_pass;
+    public JFXPasswordField confirm_password;
 
 
 
     @FXML
     public Label PasswordErrorLabel;
-    public Label report_email;
+    public JFXTextField show_password;
+    public JFXTextField show_confirm;
+    public JFXTextField show_admin;
+    public JFXCheckBox pass_box;
+    public JFXCheckBox confirm_box;
+    public JFXCheckBox admin_box;
 
 
     validator validate= new validator();
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        show_password.setManaged(false);
+        show_password.setVisible(false);
+
+        show_password.managedProperty().bind(pass_box.selectedProperty());
+        show_password.visibleProperty().bind(pass_box.selectedProperty());
+
+        password.managedProperty().bind(pass_box.selectedProperty().not());
+        password.visibleProperty().bind(pass_box.selectedProperty().not());
+
+        show_password.textProperty().bindBidirectional(password.textProperty());
+        //sign_up.isFocused();
+
+        show_confirm.setManaged(false);
+        show_confirm.setVisible(false);
+
+        show_confirm.managedProperty().bind(confirm_box.selectedProperty());
+        show_confirm.visibleProperty().bind(confirm_box.selectedProperty());
+
+        confirm_password.managedProperty().bind(confirm_box.selectedProperty().not());
+        confirm_password.visibleProperty().bind(confirm_box.selectedProperty().not());
+
+        show_confirm.textProperty().bindBidirectional(confirm_password.textProperty());
+
+
+        show_admin.setManaged(false);
+        show_admin.setVisible(false);
+
+        show_admin.managedProperty().bind(admin_box.selectedProperty());
+        show_admin.visibleProperty().bind(admin_box.selectedProperty());
+
+        admin_pass.managedProperty().bind(admin_box.selectedProperty().not());
+        admin_pass.visibleProperty().bind(admin_box.selectedProperty().not());
+
+        show_admin.textProperty().bindBidirectional(admin_pass.textProperty());
+
+    }
+
 
     public void staffreg(ActionEvent actionEvent) {
 

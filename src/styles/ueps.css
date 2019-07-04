@@ -1,4 +1,3 @@
-.root{-fx-background-color:#ffffcc;}
 .button:hover{
 -fx-background-color:#ffffcc;
 -fx-border-width: 1px;
@@ -15,7 +14,6 @@
 -fx-border-style: solid;
 -fx-border-color:#8A4117;
 }
-
 .button{
 -fx-background-color:#19355E;
 -fx-border-radius: 7px;
@@ -66,7 +64,6 @@ table-cell .table-row-cell.even  {
   -fx-border-radius: 5px;
   -fx-text-fill:#755544;
   -fx-border-style: solid;
-  -fx-border-color:#75544;
   -fx-scale-y: 1.1;
   }
 
@@ -79,11 +76,4 @@ table-cell .table-row-cell.even  {
     -fx-background-color:#755544;
        -fx-text-alignment:center;
        -fx-margin: 10px;
-   }
-   .textfield:focused{
-   -fx-border-color: #000000;
-   }
-   .icon{
-   -fx-fill: #8A4117;
-   -icon-size: 15px;
    }

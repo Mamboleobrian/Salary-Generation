@@ -1,4 +1,6 @@
 package controller;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import database_ueps.ConnectivityClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -30,15 +32,19 @@ import java.util.ResourceBundle;
 public class authentication implements Initializable {
 
 
-    public CustomTextField show_pass;
-    public CustomPasswordField user_pass;
+    
+    
     public CheckBox check_pass;
     public Label connect_feedback;
     public Button sign_up;
     public Button staff_log;
     public AnchorPane anchor_auth;
+    public JFXTextField staff_id;
+    public JFXPasswordField user_pass;
+    public JFXTextField show_pass;
+
     private ActionEvent event;
-    public CustomTextField staff_id;
+    
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -65,6 +71,8 @@ public class authentication implements Initializable {
         Scene change_scene = new Scene(change);
         Stage stage_app = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
         stage_app.setScene(change_scene);
+        stage_app.setResizable(false);
+        stage_app.setMaximized(false);
         stage_app.show();
     }
 
@@ -91,7 +99,7 @@ public class authentication implements Initializable {
                     e.printStackTrace();
                 }
                 Stage stage_app = new Stage();
-     stage_app.setScene(new Scene(root));
+        stage_app.setScene(new Scene(root));
 //                Screen screen = Screen.getPrimary();
 //                Rectangle2D bounds = screen.getVisualBounds();
 //
@@ -104,8 +112,7 @@ public class authentication implements Initializable {
 
                // stage_app.setScene(new Scene(root, 1500, 900));
      //stage_app.setResizable(false);
-     stage_app.setMaximized(true);
-       //stage_app.getIcons().add(image1);
+        stage_app.setMaximized(true);
         stage_app.show();
         close(anchor_auth);
         stage_app.setOnCloseRequest(event1 -> {

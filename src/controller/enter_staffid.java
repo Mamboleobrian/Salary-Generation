@@ -1,6 +1,7 @@
 package controller;
 
 import animatefx.animation.SlideInRight;
+import com.jfoenix.controls.JFXTextField;
 import database_ueps.ConnectivityClass;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
@@ -27,11 +28,12 @@ import java.util.ResourceBundle;
 public class enter_staffid implements Initializable {
 
     public AnchorPane anchor_enter;
-    public TextField enter_staff;
+    public JFXTextField enter_staff;
     public static String id;
     public Label staff_results;
     public Button okay_button;
     static String id_hold;
+
 
     public void initialize(URL location, ResourceBundle resources) {
         new SlideInRight(anchor_enter).play();
@@ -80,8 +82,11 @@ public class enter_staffid implements Initializable {
                         stage_app.toFront();
                     });
                     stage_app.setScene(new Scene(root));
+                    stage_app.setResizable(false);
+                    stage_app.setMaximized(false);
 
                     stage_app.showAndWait();
+
 
                 }
                 else {
@@ -99,6 +104,7 @@ public class enter_staffid implements Initializable {
     }
 
     public void okay(MouseEvent mouseEvent) { check(mouseEvent);
+
     }
 
 

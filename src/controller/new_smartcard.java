@@ -2,6 +2,8 @@ package controller;
 
 import animatefx.animation.SlideInRight;
 import animatefx.animation.SlideInUp;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
 import database_ueps.ConnectivityClass;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -23,11 +25,12 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class new_smartcard implements Initializable {
-    public TextField addcard_id;
-    public TextField addname;
-    public TextField addstaff_id;
+   
     public AnchorPane anchor_employee;
-    public ComboBox select_juri;
+    public JFXTextField addcard_id;
+    public JFXTextField addname;
+    public JFXTextField addstaff_id;
+    public JFXComboBox select_juri;
     private ObservableList selections = FXCollections.observableArrayList();
 
 

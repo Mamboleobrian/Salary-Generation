@@ -5,6 +5,9 @@ public class TableModel {
    String date;
    String card_id;
    String staff_id;
+   String arrival_time;
+   String departure_time;
+   String time;
 
     public String getDate() {
         return date;
@@ -46,16 +49,20 @@ public class TableModel {
         this.departure_time = departure_time;
     }
 
-    String arrival_time;
+    public String getTime() {
+        return time;
+    }
 
-    public TableModel(String date, String card_id, String staff_id, String arrival_time, String departure_time) {
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public TableModel(String date, String card_id, String staff_id, String arrival_time, String departure_time, String time) {
         this.date = date;
         this.card_id = card_id;
         this.staff_id = staff_id;
         this.arrival_time = arrival_time;
         this.departure_time = departure_time;
+        this.time = time;
     }
-
-    String departure_time;
-
 }

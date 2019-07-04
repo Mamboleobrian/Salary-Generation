@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.RadialGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
-<?import org.controlsfx.control.textfield.CustomPasswordField?>
-<?import org.controlsfx.control.textfield.CustomTextField?>
 
 <AnchorPane fx:id="anchor_auth" accessibleText="signup" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffcc;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.authentication">
    <children>
@@ -19,26 +19,13 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="staff_log" layoutX="422.0" layoutY="317.0" mnemonicParsing="true" onAction="#login" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: 19355E;" stylesheets="@../styles/ueps.css" text="_LOG IN" textFill="#ffffcc">
+      <Button fx:id="staff_log" layoutX="422.0" layoutY="317.0" mnemonicParsing="true" onAction="#login" prefHeight="25.0" prefWidth="70.0" stylesheets="@../styles/ueps.css" text="LOG IN" textFill="#ffffcc">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
 
       </Button>
-       <CustomTextField fx:id="staff_id" alignment="CENTER" layoutX="171.0" layoutY="188.0" prefHeight="25.0" prefWidth="258.0" promptText="Enter Staff ID" styleClass="textfield" stylesheets="@../styles/ueps.css">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font></CustomTextField>
-      <CustomTextField fx:id="show_pass" alignment="CENTER" layoutX="192.0" layoutY="226.0" prefHeight="25.0" prefWidth="203.0" />
-      <CustomPasswordField fx:id="user_pass" alignment="CENTER" layoutX="192.0" layoutY="226.0" prefHeight="25.0" prefWidth="203.0" promptText="Enter password">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font></CustomPasswordField>
-      <CheckBox fx:id="check_pass" layoutX="405.0" layoutY="230.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="63.0" text="Show" textFill="#19355e" underline="true">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font></CheckBox>
-      <Label fx:id="connect_feedback" alignment="CENTER" layoutY="266.0" prefHeight="25.0" prefWidth="600.0">
+      <Label fx:id="connect_feedback" alignment="CENTER" layoutY="280.0" prefHeight="25.0" prefWidth="600.0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -50,13 +37,23 @@
                </stops>
             </RadialGradient>
          </textFill></Label>
-      <FontAwesomeIconView fill="#19355e" glyphName="USER" layoutX="257.0" layoutY="162.0" size="120.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <FontAwesomeIconView fill="#19355e" glyphName="ADDRESS_BOOK_ALT" layoutX="175.0" layoutY="208.0" scaleX="1.5" scaleY="1.5" size="17.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="175.0" />
-      <FontAwesomeIconView fill="#19355e" glyphName="EXPEDITEDSSL" layoutX="196.0" layoutY="246.0" scaleX="1.5" scaleY="1.5" size="17.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="196.0" />
+      <FontAwesomeIconView fill="#19355e" glyphName="USER" layoutX="257.0" layoutY="148.0" size="120.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <FontAwesomeIconView fill="#19355e" glyphName="ADDRESS_BOOK_ALT" layoutX="209.0" layoutY="205.0" scaleX="1.5" scaleY="1.5" size="17.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="209.0" />
+      <FontAwesomeIconView fill="#19355e" glyphName="EXPEDITEDSSL" layoutX="209.0" layoutY="254.0" scaleX="1.5" scaleY="1.5" size="17.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="209.0" />
       <Label alignment="CENTER" layoutX="19.0" layoutY="11.0" prefHeight="42.0" prefWidth="561.0" style="-fx-background-color: #ffffcc;" text="AUTHENTICATION" textFill="#19355e">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
+      <JFXTextField fx:id="staff_id" alignment="CENTER" focusColor="#19355e" labelFloat="true" layoutX="208.0" layoutY="186.0" prefHeight="25.0" prefWidth="184.0" promptText="Enter Staff ID" unFocusColor="#19355e">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXTextField>
+      <JFXPasswordField fx:id="user_pass" alignment="CENTER" focusColor="#19355e" labelFloat="true" layoutX="208.0" layoutY="237.0" prefHeight="25.0" prefWidth="184.0" promptText="Enter Password" unFocusColor="#19355e">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXPasswordField>
+      <JFXCheckBox fx:id="check_pass" checkedColor="#19355e" layoutX="395.0" layoutY="241.0" mnemonicParsing="false" text="Show" textFill="#19355e" unCheckedColor="#19355e" underline="true" />
+      <JFXTextField fx:id="show_pass" alignment="CENTER" focusColor="#19355e" labelFloat="true" layoutX="210.0" layoutY="237.0" prefHeight="25.0" prefWidth="178.0" unFocusColor="#19355e" />
    </children>
 </AnchorPane>

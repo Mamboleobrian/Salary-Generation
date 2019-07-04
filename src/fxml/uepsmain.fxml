@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.emojione.EmojiOneView?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.icons525.Icons525View?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -19,17 +22,17 @@
 
 
    <children>
-      <BorderPane fx:id="borderpane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="650.0" style="-fx-background-color: #fffcc;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane fx:id="borderpane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="650.0" style="-fx-background-color: #ffffcc;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
-            <AnchorPane prefHeight="273.0" style="-fx-background-color: #19355e;" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="285.0" prefWidth="1158.0" style="-fx-background-color: #19355e;" BorderPane.alignment="CENTER">
                <children>
-                  <Label alignment="CENTER" layoutX="1.0" layoutY="50.0" prefHeight="47.0" text="UNIVERSITY OF ELDORET SALARY GENERATION SYSTEM" textFill="#ffffcc" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                  <Label alignment="CENTER" layoutX="1.0" layoutY="19.0" prefHeight="78.0" prefWidth="1138.0" text="UNIVERSITY OF ELDORET SALARY GENERATION SYSTEM" textFill="#ffffcc" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
                      <font>
                         <Font name="System Bold" size="32.0" />
                      </font></Label>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <children>
-                        <ImageView blendMode="HARD_LIGHT" cache="true" fitHeight="133.0" fitWidth="500.0" opacity="0.08" pickOnBounds="true" preserveRatio="true">
+                        <ImageView blendMode="HARD_LIGHT" cache="true" fitHeight="103.0" fitWidth="481.0" opacity="0.08" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../image/eldorate.png" />
                            </image>
@@ -37,7 +40,15 @@
                               <InnerShadow choke="0.01" height="255.0" radius="127.0" width="255.0" />
                            </effect>
                         </ImageView>
-                        <ImageView blendMode="HARD_LIGHT" fitHeight="133.0" fitWidth="750.0" opacity="0.08" pickOnBounds="true" preserveRatio="true">
+                        <ImageView blendMode="HARD_LIGHT" fitHeight="100.0" fitWidth="385.0" opacity="0.08" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/eldorate.png" />
+                           </image>
+                           <effect>
+                              <InnerShadow choke="0.01" height="255.0" radius="127.0" width="255.0" />
+                           </effect>
+                        </ImageView>
+                        <ImageView blendMode="HARD_LIGHT" fitHeight="100.0" fitWidth="385.0" layoutX="595.0" layoutY="12.0" opacity="0.08" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../image/eldorate.png" />
                            </image>
@@ -47,7 +58,7 @@
                         </ImageView>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" layoutX="10.0" layoutY="148.0" prefHeight="86.0" spacing="50.0" style="-fx-background-color: #ffffcc;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="111.0" prefHeight="91.0" prefWidth="1138.0" spacing="50.0" style="-fx-background-color: #ffffcc;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
                      <children>
                         <Button mnemonicParsing="false" onMouseClicked="#new_card" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="NEW" />
                         <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#logs" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="LOGS" />
@@ -67,19 +78,39 @@
                            </children>
                         </VBox>
                         <Button mnemonicParsing="false" onAction="#pay" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="PAY SLIP" />
-                        <Button mnemonicParsing="false" onMouseClicked="#add_jurisdiction" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="PAYED" />
+                        <Button mnemonicParsing="false" onMouseClicked="#payed" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="PAYED" />
                         <Button mnemonicParsing="false" onMouseClicked="#delete_employee" prefHeight="42.0" prefWidth="80.0" stylesheets="@../styles/ueps.css" text="DELETE" />
                         <Button mnemonicParsing="false" onAction="#logout" stylesheets="@../styles/ueps.css" text="LOG OUT" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" layoutX="87.0" layoutY="238.0" prefHeight="32.0" spacing="4.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                  <HBox alignment="CENTER" layoutX="87.0" layoutY="221.0" prefHeight="56.0" prefWidth="1138.0" spacing="80.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
                      <children>
-                        <TextField fx:id="search_id" alignment="CENTER" prefHeight="30.0" prefWidth="168.0" promptText="Search Staff ID">
+                        <JFXButton mnemonicParsing="false" onMouseClicked="#Allowances" prefHeight="40.0" prefWidth="138.0" text="ALLOWANCES" textFill="#ffffcc">
                            <font>
-                              <Font name="System Bold" size="14.0" />
+                              <Font name="System Bold" size="12.0" />
                            </font>
-                        </TextField>
-                        <Icons525View fill="#ffffcc" glyphName="SEARCH" onMouseClicked="#click_search" scaleX="1.7" scaleY="1.7" strokeType="OUTSIDE" strokeWidth="0.0" />
+                        </JFXButton>
+                        <JFXButton mnemonicParsing="false" onMouseClicked="#deductions" prefHeight="40.0" prefWidth="138.0" text="DEDUCTIONS" textFill="#ffffcc">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <HBox alignment="CENTER" prefHeight="42.0" prefWidth="200.0" spacing="5.0">
+                           <children>
+                              <JFXTextField fx:id="search_staff" alignment="CENTER" focusColor="#ffffcc" labelFloat="true" promptText="Search Staff ID" style="-fx-background-color: #ffffcc;" styleClass="jxtextfield" stylesheets="@../styles/ueps.css" unFocusColor="#ffffcc" />
+                              <Icons525View fill="#ffffcc" glyphName="SEARCH" onMouseClicked="#click_search" scaleX="1.7" scaleY="1.7" scaleZ="1.7" strokeType="OUTSIDE" strokeWidth="0.0" />
+                           </children>
+                        </HBox>
+                        <JFXButton layoutX="356.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#paye_rates" prefHeight="40.0" prefWidth="138.0" text="PAYE RATES P.A" textFill="#ffffcc">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton mnemonicParsing="false" onMouseClicked="#relief_pa" prefHeight="40.0" prefWidth="138.0" text="RELIEF P.A" textFill="#ffffcc">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
                      </children>
                   </HBox>
                </children>
@@ -91,6 +122,104 @@
                </padding>
             </AnchorPane>
          </top>
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="35.0" prefWidth="1158.0" style="-fx-background-color: #19355e;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label prefHeight="35.0" prefWidth="120.0" text="University  of  Eldoret" textFill="#ffffcc" />
+                  <EmojiOneView fill="#ffffcc" glyphName="COPYRIGHT" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Label prefHeight="17.0" prefWidth="212.0" text="  2019  copyright.  All  Rights  Reserved." textFill="#ffffcc" />
+                  <Label prefHeight="17.0" prefWidth="247.0" text="   University of Eldoret is ISO 9001:2015 Certified" textFill="#ffffcc">
+                     <font>
+                        <Font name="Calibri Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="26.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/uoeeee.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </bottom>
+         <center>
+            <AnchorPane fx:id="search_anchor" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" layoutY="43.0" prefHeight="285.0" prefWidth="1118.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="40.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="288.0" prefWidth="300.0" spacing="30.0">
+                           <children>
+                              <Label fx:id="staff_label" prefHeight="32.0" prefWidth="300.0" text="Staff _id _lebel" textFill="#5d1f00">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="card_label" layoutX="33.0" layoutY="154.0" prefHeight="32.0" prefWidth="301.0" text="card _id _lebel" textFill="#5d1f00">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="name_label" layoutX="33.0" layoutY="170.0" prefHeight="32.0" prefWidth="300.0" text="name_label" textFill="#5d1f00">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="Jurisdiction_label" layoutX="33.0" layoutY="186.0" prefHeight="32.0" prefWidth="300.0" text="jutisdiction_label" textFill="#5d1f00">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutX="481.0" layoutY="10.0" prefHeight="288.0" prefWidth="300.0" spacing="30.0">
+                           <children>
+                              <Label fx:id="_staff" prefHeight="32.0" prefWidth="300.0" text="Staff _id " textFill="#5d1f00">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="_card" layoutX="33.0" layoutY="154.0" prefHeight="32.0" prefWidth="304.0" text="card_id" textFill="#5d1f00">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="_name" layoutX="33.0" layoutY="170.0" prefHeight="32.0" prefWidth="319.0" text="name" textFill="#5d1f00">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="_jurisdiction" layoutX="33.0" layoutY="186.0" prefHeight="32.0" prefWidth="302.0" text="Jurisdiction" textFill="#5d1f00">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="BOTTOM_CENTER" layoutX="589.0" layoutY="10.0" prefHeight="288.0" prefWidth="305.0" spacing="20.0">
+                           <children>
+                              <JFXTextArea fx:id="search_results" focusColor="#19355e" labelFloat="true" prefHeight="199.0" prefWidth="305.0" promptText="               EMPLOYEE DETAILS DISPLAY HERE" unFocusColor="#19355e">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></JFXTextArea>
+                              <EmojiOneView fill="#5d1f00" glyphName="PRINTER" onMouseClicked="#print_employee" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                              <Label alignment="CENTER" prefHeight="13.0" prefWidth="28.0" text="PRINT" textFill="#5d1f00">
+                                 <font>
+                                    <Font name="System Bold" size="9.0" />
+                                 </font></Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Label fx:id="employee_search" alignment="CENTER" layoutX="565.0" layoutY="5.0" prefHeight="35.0" prefWidth="1118.0" text="Label" textFill="#19355e" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </center>
       </BorderPane>
    </children>
 </AnchorPane>
